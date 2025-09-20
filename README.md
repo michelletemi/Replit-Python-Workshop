@@ -17,4 +17,14 @@ Students can clone this repo directly into **Replit** or run locally with **Pyth
 ## 🚀 Run in Replit (easiest)
 1. Go to [Replit](https://replit.com).
 2. Click **+ Create Repl → Import from GitHub**.
-3. Paste this repo URL:
+3. Paste this repo URL:https://github.com/<your-username>/Replit-Pyton-Workshop
+4. 4. Replit auto-installs Flask + Requests (from `requirements.txt`).
+5. Click **Run** → Open the public URL.
+
+---
+
+## 💻 Run locally (VS Code)
+1. Clone the repo:
+```bash
+git clone https://github.com/<your-username>/workshop-flask-template
+cd workshop-flask-template
