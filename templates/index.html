@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block title %}Home — Workshop{% endblock %}
+
+{% block content %}
+<h1 class="mb-3">Welcome to the Workshop</h1>
+<p class="text-secondary">Type something below and see the server respond:</p>
+
+<!-- FORM -->
+<section id="form" class="mb-5">
+  <form method="POST" action="/echo" class="mb-3">
+    <input class="form-control mb-2" type="text" name="text" placeholder="Enter your idea">
+    <button class="btn btn-primary">Submit</button>
+  </form>
+
+  {% if output_text %}
+  <div class="alert alert-success">{{ output_text }}</div>
+  {% endif %}
+</section>
+
+<!-- API DEMO -->
+<section id="api" class="mb-5">
+  <h2>Try a REST API</h2>
+  <button id="getAdvice" class="btn btn-outline-secondary">Get Advice</button>
+  <div id="adviceBox" class="mt-3 text-muted">Advice will appear here…</div>
+</section>
+{% endblock %}
