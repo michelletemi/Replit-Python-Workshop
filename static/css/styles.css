@@ -1,0 +1,7 @@
+.hero {
+  min-height: 60vh;
+  background: linear-gradient(135deg, #6c5ce7, #a29bfe);
+}
+.hero h1, .hero p {
+  color: #fff;
+}

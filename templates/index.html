@@ -2,25 +2,64 @@
 {% block title %}Home — Workshop{% endblock %}
 
 {% block content %}
-<h1 class="mb-3">Welcome to the Workshop</h1>
-<p class="text-secondary">Type something below and see the server respond:</p>
+<!-- Hero Section -->
+<header class="hero text-light d-flex align-items-center">
+  <div class="container text-center py-5">
+    <h1 class="display-4 fw-bold">Build. Test. Tinker.</h1>
+    <p class="lead">Your first Python-powered website with APIs and creativity.</p>
+    <a href="#form" class="btn btn-light btn-lg mt-3">Get Started</a>
+  </div>
+</header>
 
-<!-- FORM -->
-<section id="form" class="mb-5">
-  <form method="POST" action="/echo" class="mb-3">
-    <input class="form-control mb-2" type="text" name="text" placeholder="Enter your idea">
-    <button class="btn btn-primary">Submit</button>
+<!-- Input -> Output -->
+<section id="form" class="container py-5">
+  <h2 class="mb-3">Turn your idea into a tagline ✨</h2>
+  <form method="POST" action="/echo" class="row g-3">
+    <div class="col-md-6">
+      <input class="form-control form-control-lg" type="text" name="text" placeholder="Enter your idea" value="{{ user_input }}">
+    </div>
+    <div class="col-md-4">
+      <select name="vibe" class="form-select form-select-lg">
+        <option value="fun">Fun</option>
+        <option value="bold">Bold</option>
+        <option value="futuristic">Futuristic</option>
+      </select>
+    </div>
+    <div class="col-md-2">
+      <button class="btn btn-primary btn-lg w-100">Go</button>
+    </div>
   </form>
 
   {% if output_text %}
-  <div class="alert alert-success">{{ output_text }}</div>
+  <div class="alert alert-success mt-3"><strong>Result:</strong> {{ output_text }}</div>
   {% endif %}
 </section>
 
-<!-- API DEMO -->
-<section id="api" class="mb-5">
-  <h2>Try a REST API</h2>
-  <button id="getAdvice" class="btn btn-outline-secondary">Get Advice</button>
-  <div id="adviceBox" class="mt-3 text-muted">Advice will appear here…</div>
+<!-- API Playground -->
+<section id="api" class="bg-light py-5">
+  <div class="container">
+    <h2 class="mb-3">API Playground 🌍</h2>
+    <p class="text-secondary">Click below to fetch advice or a random dog image.</p>
+    <div class="mb-3">
+      <button id="getAdvice" class="btn btn-outline-primary">Get Advice</button>
+      <button id="getDog" class="btn btn-outline-secondary">Random Dog</button>
+    </div>
+    <div id="adviceBox" class="p-3 bg-white rounded shadow-sm mb-3">Advice will appear here…</div>
+    <img id="dogImg" alt="Dog will appear here" class="img-fluid rounded shadow-sm" />
+  </div>
+</section>
+
+<!-- About -->
+<section id="about" class="container py-5">
+  <div class="row align-items-center g-4">
+    <div class="col-md-6">
+      <img src="https://images.unsplash.com/photo-1520975922284-354a4cb8891a?q=80&w=1600&auto=format&fit=crop"
+           class="img-fluid rounded shadow-sm" alt="Creative workspace">
+    </div>
+    <div class="col-md-6">
+      <h2 class="h3 fw-bold mb-2">Why this workshop?</h2>
+      <p class="text-secondary">You’ll learn how HTML, CSS, and Python Flask work together. Start simple, then enhance with APIs — and even AI later!</p>
+    </div>
+  </div>
 </section>
 {% endblock %}
